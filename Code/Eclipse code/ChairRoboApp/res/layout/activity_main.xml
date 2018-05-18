@@ -1,0 +1,101 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/logoback" >
+
+     <TextView
+        android:id="@+id/txtArduino"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="" />
+     <Button
+        android:id="@+id/closeweel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="82dp"
+        android:text="close" />
+
+    <Button
+        android:id="@+id/openweel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/closeweel"
+        android:layout_alignBottom="@+id/closeweel"
+        android:layout_alignParentLeft="true"
+        android:text="Open" />
+
+    <Button
+        android:id="@+id/stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/rev"
+        android:layout_centerVertical="true"
+        android:background="@drawable/stop" />
+
+    <Button
+        android:id="@+id/down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fwd"
+        android:layout_alignParentLeft="true"
+        android:text="down" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fwd"
+        android:layout_alignParentRight="true"
+        android:text="Up" />
+
+    <Button
+        android:id="@+id/left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fwd"
+        android:layout_marginRight="22dp"
+        android:layout_toLeftOf="@+id/stop"
+        android:background="@drawable/left" />
+
+    <Button
+        android:id="@+id/fwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/stop"
+        android:layout_alignLeft="@+id/stop"
+        android:layout_marginBottom="26dp"
+        android:background="@drawable/up" />
+
+    <Button
+        android:id="@+id/rev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/closeweel"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/down" />
+
+    <Button
+        android:id="@+id/right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="32dp"
+        android:layout_toRightOf="@+id/stop"
+        android:background="@drawable/right" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtArduino"
+        android:layout_centerHorizontal="true"
+        android:text="Welcome to Robo Chair Handler "
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

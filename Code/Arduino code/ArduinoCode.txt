@@ -1,0 +1,155 @@
+int M1= 2;
+int M2= 3;
+int M3= 4;
+int M4= 5;
+int HM1= 6;
+int HM2= 7;
+int HM3= 11;
+int HM4= 12;
+int buttonState = 0;  
+const int buttonPin =  13;
+
+char input;  
+  
+void setup() 
+{  
+  Serial.begin(9600);  
+  pinMode(M1, OUTPUT);
+  pinMode(M2, OUTPUT);  
+  pinMode(M3, OUTPUT);  
+  pinMode(M4, OUTPUT);  
+  pinMode(HM1, OUTPUT);
+  pinMode(HM2, OUTPUT);  
+  pinMode(HM3, OUTPUT);  
+  pinMode(HM4, OUTPUT); 
+ pinMode(buttonPin, INPUT);  
+  Serial.println(">> START<<");  
+}  
+  
+void loop() 
+{
+buttonState = digitalRead(buttonPin);
+  if(Serial.available()>0)  
+  {  
+    input= Serial.read();  
+    if(input=='2')  
+    {  
+      Serial.println("ON");  
+      digitalWrite(M1, HIGH); 
+      digitalWrite(M2, LOW);     
+      digitalWrite(M3, HIGH); 
+      digitalWrite(M4, LOW);     
+      delay(2);  
+    }  
+    else if(input=='8')  
+    {  
+      Serial.println("OFF");  
+      digitalWrite(M1, LOW); 
+      digitalWrite(M2, HIGH);     
+      digitalWrite(M3, LOW); 
+      digitalWrite(M4, HIGH);     
+      delay(2);  
+    }  
+    else if(input=='6')  
+    {  
+      Serial.println("OFF");  
+      digitalWrite(M1, LOW); 
+      digitalWrite(M2, HIGH);     
+      digitalWrite(M3, HIGH); 
+      digitalWrite(M4, LOW);     
+      delay(2);  
+    }
+    else if(input=='4')  
+    {  
+      Serial.println("OFF");  
+      digitalWrite(M1, HIGH); 
+      digitalWrite(M2, LOW);     
+      digitalWrite(M3, LOW); 
+      digitalWrite(M4, HIGH);     
+      delay(2);  
+    }
+    else if(input=='1')  
+    {  
+      Serial.println("ON");  
+        digitalWrite(M1, LOW); 
+      digitalWrite(M2, LOW);     
+      digitalWrite(M3, LOW); 
+      digitalWrite(M4, LOW); 
+      digitalWrite(HM1, HIGH); 
+      digitalWrite(HM2, LOW);     
+      digitalWrite(HM3, LOW); 
+      digitalWrite(HM4, LOW);     
+      delay(2);  
+    }  
+    else if(input=='3')  
+    {  
+      Serial.println("OFF");  
+        digitalWrite(M1, LOW); 
+      digitalWrite(M2, LOW);     
+      digitalWrite(M3, LOW); 
+      digitalWrite(M4, LOW); 
+      digitalWrite(HM1, LOW); 
+      digitalWrite(HM2, HIGH);     
+      digitalWrite(HM3, LOW); 
+      digitalWrite(HM4, LOW);     
+      delay(2);  
+    }  
+    else if(input=='7')  
+    {  
+      Serial.println("OFF");  
+        digitalWrite(M1, LOW); 
+      digitalWrite(M2, LOW);     
+      digitalWrite(M3, LOW); 
+      digitalWrite(M4, LOW); 
+      digitalWrite(HM1, HIGH); 
+      digitalWrite(HM2, HIGH);     
+      digitalWrite(HM3, HIGH); 
+      digitalWrite(HM4, LOW);     
+      delay(2);  
+    }
+    else if(input=='9')  
+    {  
+      Serial.println("OFF");  
+        digitalWrite(M1, LOW); 
+      digitalWrite(M2, LOW);     
+      digitalWrite(M3, LOW); 
+      digitalWrite(M4, LOW); 
+      digitalWrite(HM1, LOW); 
+      digitalWrite(HM2, LOW);     
+      digitalWrite(HM3, LOW); 
+      digitalWrite(HM4, HIGH);     
+      delay(2);  
+    }
+    else if(input=='5')  
+    {  
+      Serial.println("OFF");  
+        digitalWrite(M1, LOW); 
+      digitalWrite(M2, LOW);     
+      digitalWrite(M3, LOW); 
+      digitalWrite(M4, LOW); 
+      digitalWrite(HM1, LOW); 
+      digitalWrite(HM2, LOW);     
+      digitalWrite(HM3, LOW); 
+      digitalWrite(HM4, LOW);     
+      delay(2);  
+    }  
+  } 
+   else if(buttonState == HIGH) 
+    {  
+      Serial.println("NO INPUT");  
+      Serial.println(input); 
+        digitalWrite(M1, LOW); 
+      digitalWrite(M2, HIGH);     
+      digitalWrite(M3, LOW); 
+      digitalWrite(M4, HIGH);     
+      digitalWrite(HM1, LOW); 
+      digitalWrite(HM2, LOW);     
+      digitalWrite(HM3, LOW); 
+      digitalWrite(HM4, LOW); 
+      delay(500);  
+      digitalWrite(M1, LOW); 
+      digitalWrite(M2, LOW);     
+      digitalWrite(M3, LOW); 
+      digitalWrite(M4, LOW);  
+  }    
+} 
